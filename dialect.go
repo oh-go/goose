@@ -47,7 +47,7 @@ type PostgresDialect struct{}
 
 func (pg PostgresDialect) createVersionTableSQL() string {
 	return `CREATE TABLE goose_db_version (
-            	id serial NOT NULL,
+		        id bigint unsigned NOT NULL auto_increment,
                 version_id bigint NOT NULL,
                 is_applied boolean NOT NULL,
                 tstamp timestamp NULL default now(),
